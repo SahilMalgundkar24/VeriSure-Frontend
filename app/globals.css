@@ -1,21 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eff5ff;
+  --foreground: #262932;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font {
+  font-family: "Montserrat", serif;
+}
+.margin-top {
+  margin-top: 80px;
+}
+
+.blue-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(184, 212, 252, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.purple-bg {
+  margin-top: 200px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 218, 252, 0.4),
+    rgba(255, 255, 255, 0)
+  );
 }

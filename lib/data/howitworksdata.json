@@ -1,0 +1,28 @@
+{
+  "howitworks": [
+    {
+      "id": 1,
+      "className": "blue-bg",
+      "title": "Fill Your Details",
+      "description": "Start by entering your basic information in a quick and easy form"
+    },
+    {
+      "id": 2,
+      "className": "purple-bg",
+      "title": "Upload Your Documents",
+      "description": "Upload your essential documents, including ID proofs securely"
+    },
+    {
+      "id": 3,
+      "className": "blue-bg",
+      "title": "Let VeriEase Do the Rest",
+      "description": "Our AI validates and verifies your documents in real-time"
+    },
+    {
+      "id": 4,
+      "className": "purple-bg",
+      "title": "Get Instant Results",
+      "description": "Receive accurate and reliable verification results instantly"
+    }
+  ]
+}

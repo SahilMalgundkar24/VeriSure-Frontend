@@ -1,0 +1,32 @@
+{
+  "herocardsdata": [
+    {
+      "id": 1,
+      "image": "/images/speed.png",
+      "className": "mt-0",
+      "title": "Lightning-Fast Verification",
+      "description": "Verify documents in under 3 seconds with unparalleled efficiency"
+    },
+    {
+      "id": 2,
+      "image": "/images/security.png",
+      "className": "margin-top",
+      "title": "Secure by Design",
+      "description": "Built with advanced encryption to keep data safe and compliant"
+    },
+    {
+      "id": 3,
+      "image": "/images/accuracy.png",
+      "className": "margin-top",
+      "title": "Three Sigma Accuracy",
+      "description": "Achieve precision with our AI, ensuring minimal errors in document verification"
+    },
+    {
+      "id": 4,
+      "image": "/images/cloud.png",
+      "className": "mt-0",
+      "title": "Scalable Solutions",
+      "description": "Handle thousands of applications seamlessly, perfect for any organization"
+    }
+  ]
+}
