@@ -12,7 +12,7 @@ const page = () => {
       <Hero />
       <About />
       <HowItWorks />
-      {/* <Features /> */}
+      <Features />
     </>
   );
 };

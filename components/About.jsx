@@ -28,7 +28,7 @@ const About = () => {
         <div className="absolute inset-0 flex justify-center items-center -z-10">
           <div className="w-[400px] h-[400px] bg-[#A0A7F1] opacity-50 blur-3xl rounded-full"></div>
         </div>
-        <div>
+        <div className="select-none">
           <img src="/images/about.png" alt="" />
         </div>
       </div>
