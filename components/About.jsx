@@ -20,7 +20,7 @@ const About = () => {
           track, manage, and optimize the verification process like never before
         </p>
         <div className="mt-3">
-          <CtaButton name="Try for free" className="px-2 py-2" />
+          <CtaButton name="Try for free" />
         </div>
       </div>
 

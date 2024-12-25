@@ -17,7 +17,7 @@ const Hero = () => {
           AI-Driven Solution for a Seamless Document Verification Process.
         </p>
         <div>
-          <CtaButton name="Demo" className="px-2 py-2" />
+          <CtaButton name="Demo" />
         </div>
       </div>
 

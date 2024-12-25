@@ -14,7 +14,7 @@ const Features = () => {
             <h1 className="text-center font-medium text-lg">
               For Organization
             </h1>
-            <div className="h-px w-full bg-[#262932] opacity-30 my-5"></div>
+            <div className="h-px w-full bg-[#262932] opacity-10 my-5"></div>
             <div className="flex flex-col gap-3">
               <p>Saves time by reducing manual effort</p>
               <p>Minimizes human error</p>
@@ -26,7 +26,7 @@ const Features = () => {
 
           <div className="flex flex-col w-1/5 bg-white px-5 py-5 rounded-lg h-fit">
             <h1 className="text-center font-medium">For Applicants</h1>
-            <div className="h-px w-full bg-[#262932] opacity-30 my-3"></div>
+            <div className="h-px w-full bg-[#262932] opacity-10 my-3"></div>
             <div className="flex flex-col gap-3 text-sm">
               <p>Instant feedback on application issues</p>
               <p>Faster and more transparent process</p>
