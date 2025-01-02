@@ -3,7 +3,7 @@ import CtaButton from "./ui/CtaButton";
 
 const Navbar = () => {
   return (
-    <div className="px-16 py-5 w-full h-auto flex justify-between items-center z-50 bg-[#eff5ff]/70  backdrop-blur-lg">
+    <nav className="px-16 py-5 w-full h-auto flex justify-between items-center z-50 bg-[#eff5ff]/70  backdrop-blur-lg">
       <div className="font-semibold text-xl">VeriEase</div>
       <div>
         <ul className="flex gap-7 text-sm">
@@ -14,7 +14,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div></div>
-    </div>
+    </nav>
   );
 };
 

@@ -22,7 +22,7 @@ const Uploadfiles = ({ label, name }) => {
           <input
             name={name}
             type="file"
-            className="border border-gray-200 rounded-xl px-5 py-1 file:bg-transparent file:border-none file:p-2 file:mr-16"
+            className="border border-gray-200 rounded-xl px-5 py-1  file:bg-transparent file:border-none file:p-2 file:mr-16"
             onChange={handleFileChange}
           />
         </div>

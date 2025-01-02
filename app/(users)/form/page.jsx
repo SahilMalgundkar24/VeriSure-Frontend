@@ -1,16 +1,19 @@
 "use client";
-import ProgressBar from "@/components/form/ProgressBar";
 import React, { useState, useEffect } from "react";
 import Step1 from "@/components/form/Step1";
 import Step2 from "@/components/form/Step2";
+import ProgressBar from "@/components/form/ProgressBar";
 
 const Page = () => {
   const [steps, setSteps] = useState(1);
   const [formData, setFormData] = useState({});
   const [mounted, setMounted] = useState(false);
+  let validateForm; // Reference for Step1 validation function
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (steps === 1) {
+      const isValid = await validateForm();
+      if (!isValid) return;
       console.log("Step 1 Data:", formData);
     }
     setSteps(steps + 1);
@@ -44,7 +47,11 @@ const Page = () => {
         </div>
         <div className="w-full">
           {steps === 1 && (
-            <Step1 formData={formData} setFormData={setFormData} />
+            <Step1
+              formData={formData}
+              setFormData={setFormData}
+              onValidate={(validate) => (validateForm = validate)}
+            />
           )}
           {steps === 2 && <Step2 />}
         </div>
