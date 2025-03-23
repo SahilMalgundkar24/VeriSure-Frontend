@@ -1,7 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const Uploadfiles = ({ label, name }) => {
   const [documentData, setDocumentData] = useState({});
+  const [verificationStatus, setVerificationStatus] = useState(null);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -9,6 +12,51 @@ const Uploadfiles = ({ label, name }) => {
       setDocumentData({
         [name]: file,
       });
+      // Reset verification status when a new file is selected
+      setVerificationStatus(null);
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!documentData[name]) return;
+
+    setIsVerifying(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", documentData[name]);
+      const classifierResponse = await axios.post(
+        "http://127.0.0.1:8000/final/",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      console.log(classifierResponse.data);
+
+      // Check if the label matches the response class
+
+      if (
+        classifierResponse.data.class &&
+        classifierResponse.data.class.toLowerCase() === name.toLowerCase()
+      ) {
+        setVerificationStatus({
+          success: true,
+          message: `${label} Verified successfully!`,
+        });
+      } else {
+        setVerificationStatus({
+          success: false,
+          message: "Verification failed. Document type doesn't match.",
+        });
+      }
+    } catch (error) {
+      console.error("Verification error:", error);
+      setVerificationStatus({
+        success: false,
+        message: "Error during verification. Please try again.",
+      });
+    } finally {
+      setIsVerifying(false);
     }
   };
 
@@ -22,15 +70,34 @@ const Uploadfiles = ({ label, name }) => {
           <input
             name={name}
             type="file"
-            className="border border-gray-200 rounded-xl px-5 py-1  file:bg-transparent file:border-none file:p-2 file:mr-16"
+            className="border border-gray-200 rounded-xl px-5 py-1 file:bg-transparent file:border-none file:p-2 file:mr-16"
             onChange={handleFileChange}
           />
         </div>
 
-        <button className="px-4 py-1 bg-slate-300 rounded-md flex justify-center items-center">
-          Verify
+        <button
+          onClick={handleUpload}
+          disabled={isVerifying || !documentData[name]}
+          className={`px-4 py-1 rounded-md flex justify-center items-center ${
+            isVerifying ? "bg-gray-300" : "bg-slate-300 hover:bg-slate-400"
+          }`}
+        >
+          {isVerifying ? "Verifying..." : "Verify"}
         </button>
       </div>
+
+      {verificationStatus && (
+        <div
+          className={`mt-2 p-2 rounded-md ${
+            verificationStatus.success
+              ? "bg-green-100 text-green-700"
+              : "bg-red-100 text-red-700"
+          }`}
+        >
+          {verificationStatus.message}
+        </div>
+      )}
+
       {documentData[name] && (
         <div className="mt-2">
           {documentData[name].type.startsWith("image/") ? (
