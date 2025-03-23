@@ -8,7 +8,7 @@ const Page = () => {
   const [steps, setSteps] = useState(1);
   const [formData, setFormData] = useState({});
   const [mounted, setMounted] = useState(false);
-  let validateForm; // Reference for Step1 validation function
+  let validateForm;
 
   const handleNext = async () => {
     if (steps === 1) {

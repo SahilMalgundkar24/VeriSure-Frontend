@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "VeriEase",
+  title: "VeriSure",
   description:
     "AI-Driven Solution for a Seamless Document Verification Process",
 };
